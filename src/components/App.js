@@ -29,7 +29,7 @@ function App() {
   return (
     <main className="App">
       <h1>Rick and Morty characters finder</h1>
-      <Filters handleFilterName={handleFilterName} />
+      <Filters handleFilterName={handleFilterName} inputValue={filterName} />
       {filteredCharacters.length === 0 ? (
         <MissingCharacter />
       ) : (

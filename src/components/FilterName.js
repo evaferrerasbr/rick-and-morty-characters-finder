@@ -4,7 +4,12 @@ function FilterName(props) {
     props.handleFilterName(value);
   };
 
-  return <input onChange={handleChange} />;
+  return (
+    <>
+      <label htmlFor="filterName" />
+      <input id="filterName" onChange={handleChange} value={props.inputValue} />
+    </>
+  );
 }
 
 export default FilterName;

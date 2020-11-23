@@ -1,9 +1,18 @@
 import FilterName from './FilterName';
+import FilterGender from './FilterGender';
 
 function Filters(props) {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
+
   return (
-    <form>
-      <FilterName handleFilterName={props.handleFilterName} />
+    <form onSubmit={handleSubmit}>
+      <FilterName
+        handleFilterName={props.handleFilterName}
+        inputValue={props.inputValue}
+      />
+      <FilterGender />
     </form>
   );
 }
