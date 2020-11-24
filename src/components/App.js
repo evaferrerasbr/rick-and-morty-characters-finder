@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+import Loading from './Loading';
 import ServerError from './ServerError';
 import MissingCharacter from './MissingCharacter';
 import '../stylesheets/App.scss';
@@ -13,6 +14,7 @@ function App() {
 
   //state
   const [serverError, setServerError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(dataLocal.name);
   const [filterGender, setFilterGender] = useState(dataLocal.gender);
@@ -21,9 +23,11 @@ function App() {
 
   //api
   useEffect(() => {
+    setIsLoading(true);
     getDataFromApi().then((data) => {
       if (data) {
         setCharacters(data);
+        setIsLoading(false);
       } else {
         setServerError(true);
       }
@@ -117,6 +121,10 @@ function App() {
     return serverError === true ? <ServerError /> : null;
   };
 
+  const renderLoading = () => {
+    return isLoading === true ? <Loading /> : null;
+  };
+
   //jsx
   return (
     <>
@@ -135,6 +143,7 @@ function App() {
         <Route path="/character/:id" component={renderDetail} />
       </Switch>
       {renderServerError()}
+      {renderLoading()}
     </>
   );
 }
