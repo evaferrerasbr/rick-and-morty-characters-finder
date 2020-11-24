@@ -7,11 +7,11 @@ import MissingCharacter from './MissingCharacter';
 import '../stylesheets/App.scss';
 
 function App() {
-  const dataLocal = localStorage.getItem('value');
+  const dataLocal = JSON.parse(localStorage.getItem('filters'));
 
   //state
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState(dataLocal);
+  const [filterName, setFilterName] = useState(dataLocal.name);
 
   //api
   useEffect(() => {
@@ -24,7 +24,10 @@ function App() {
   });
 
   const setLocalStorage = () => {
-    localStorage.setItem('value', filterName);
+    const filters = {
+      name: filterName,
+    };
+    localStorage.setItem('filters', JSON.stringify(filters));
   };
 
   //handlers

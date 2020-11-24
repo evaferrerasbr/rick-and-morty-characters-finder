@@ -11,6 +11,9 @@ const getDataFromApi = () => {
     })
     .catch((err) => {
       console.log(err);
+      // return {
+      //   error: 'Se ha producido un error en el servidor',
+      // };
     });
 };
 
