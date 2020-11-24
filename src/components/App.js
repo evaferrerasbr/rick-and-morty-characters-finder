@@ -1,4 +1,9 @@
 import { getDataFromApi } from '../services/api';
+import {
+  setLocalStorage,
+  getFromLocalStorage,
+  removeLocalStorage,
+} from '../services/localstorage';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
@@ -8,15 +13,15 @@ import MissingCharacter from './MissingCharacter';
 import '../stylesheets/App.scss';
 
 function App() {
-  const dataLocal = JSON.parse(localStorage.getItem('filters'));
+  const dataLocal = getFromLocalStorage();
 
   //state
   const [serverError, setServerError] = useState(false);
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState(dataLocal.name);
-  const [filterGender, setFilterGender] = useState(dataLocal.gender);
-  const [filterStatus, setFilterStatus] = useState(dataLocal.status);
-  const [isOrdered, setIsOrdered] = useState(dataLocal.order);
+  const [filterName, setFilterName] = useState(dataLocal.name || '');
+  const [filterGender, setFilterGender] = useState(dataLocal.gender || 'all');
+  const [filterStatus, setFilterStatus] = useState(dataLocal.status || 'all');
+  const [isOrdered, setIsOrdered] = useState(dataLocal.order || false);
 
   //api
   useEffect(() => {
@@ -31,18 +36,8 @@ function App() {
 
   //local storage
   useEffect(() => {
-    setLocalStorage();
+    setLocalStorage(filterName, filterGender, filterStatus, isOrdered);
   });
-
-  const setLocalStorage = () => {
-    const filters = {
-      name: filterName,
-      gender: filterGender.toLowerCase(),
-      status: filterStatus.toLowerCase(),
-      order: isOrdered,
-    };
-    localStorage.setItem('filters', JSON.stringify(filters));
-  };
 
   //handlers
   const handleFilters = (data) => {
@@ -58,6 +53,14 @@ function App() {
     if (data.name === 'order') {
       setIsOrdered(data.checked);
     }
+  };
+
+  const handleReset = () => {
+    setFilterName('');
+    setFilterGender('all');
+    setFilterStatus('all');
+    setIsOrdered(false);
+    removeLocalStorage();
   };
 
   //filters
@@ -127,6 +130,7 @@ function App() {
           <CharacterList
             data={filterCharacthers()}
             handleFilters={handleFilters}
+            handleReset={handleReset}
             inputValue={filterName}
             genderValue={filterGender}
             statusValue={filterStatus}

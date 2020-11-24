@@ -27,6 +27,7 @@ function CharacterList(props) {
           genderValue={props.genderValue}
           statusValue={props.statusValue}
           isOrdered={props.isOrdered}
+          handleReset={props.handleReset}
         />
         <ul>{getCharacterList}</ul>
       </section>

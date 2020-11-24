@@ -2,6 +2,7 @@ import FilterName from './FilterName';
 import FilterGender from './FilterGender';
 import FilterStatus from './FilterStatus';
 import FilterAlphabet from './FilterAlphabet';
+import Reset from './Reset';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -26,6 +27,7 @@ function Filters(props) {
         handleFilters={props.handleFilters}
         isOrdered={props.isOrdered}
       />
+      <Reset handleReset={props.handleReset} />
     </form>
   );
 }
