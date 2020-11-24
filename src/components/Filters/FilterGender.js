@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function FilterGender(props) {
   const handleChange = (ev) => {
     const data = {
@@ -32,5 +34,10 @@ function FilterGender(props) {
     </>
   );
 }
+
+FilterGender.propTypes = {
+  handleFilters: PropTypes.func.isRequired,
+  filterGender: PropTypes.string.isRequired,
+};
 
 export default FilterGender;

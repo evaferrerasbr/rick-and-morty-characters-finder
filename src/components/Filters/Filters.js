@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import FilterName from './FilterName';
 import FilterGender from './FilterGender';
 import FilterStatus from './FilterStatus';
@@ -31,5 +32,14 @@ function Filters(props) {
     </form>
   );
 }
+
+Filters.propTypes = {
+  handleFilters: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
+  filterName: PropTypes.string.isRequired,
+  filterGender: PropTypes.string.isRequired,
+  filterStatus: PropTypes.string.isRequired,
+  isOrderedByName: PropTypes.bool.isRequired,
+};
 
 export default Filters;

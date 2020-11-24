@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import icon from '../images/dead-icon.png';
 
 function CharacterCard(props) {
@@ -29,6 +30,13 @@ CharacterCard.defaultProps = {
   name: 'Unknown character',
   species: 'Unknown',
   status: 'Unknown',
+};
+
+CharacterCard.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  species: PropTypes.string,
+  status: PropTypes.string,
 };
 
 export default CharacterCard;

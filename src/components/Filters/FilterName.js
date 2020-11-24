@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function FilterName(props) {
   const handleChange = (ev) => {
     const data = {
@@ -19,5 +21,10 @@ function FilterName(props) {
     </>
   );
 }
+
+FilterName.propTypes = {
+  handleFilters: PropTypes.func.isRequired,
+  filterName: PropTypes.string.isRequired,
+};
 
 export default FilterName;

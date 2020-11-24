@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function FilterAlphabet(props) {
   const handleChange = (ev) => {
     const data = {
@@ -23,5 +25,10 @@ function FilterAlphabet(props) {
     </>
   );
 }
+
+FilterAlphabet.propTypes = {
+  handleFilters: PropTypes.func.isRequired,
+  isOrderedByName: PropTypes.bool.isRequired,
+};
 
 export default FilterAlphabet;
