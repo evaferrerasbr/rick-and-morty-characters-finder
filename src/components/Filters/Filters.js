@@ -4,6 +4,7 @@ import FilterGender from './FilterGender';
 import FilterStatus from './FilterStatus';
 import FilterAlphabet from './FilterSort';
 import Reset from '../extras/Reset';
+import '../../stylesheets/components/Filters.scss';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -11,7 +12,7 @@ function Filters(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="Filters" onSubmit={handleSubmit}>
       <FilterName
         handleFilters={props.handleFilters}
         filterName={props.filterName}

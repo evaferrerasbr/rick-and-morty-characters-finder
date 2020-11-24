@@ -11,8 +11,9 @@ function FilterName(props) {
 
   return (
     <>
-      <label htmlFor="filterName" />
+      <label htmlFor="filterName">Name:</label>
       <input
+        className="Filters__input Filters__input--name"
         id="filterName"
         name="name"
         onChange={handleChange}

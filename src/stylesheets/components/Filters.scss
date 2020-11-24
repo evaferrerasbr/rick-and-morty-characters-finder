@@ -1,0 +1,26 @@
+@import '../core/variables.scss';
+
+.Filters {
+  margin: 15px;
+  &__input {
+    padding: 5px;
+    margin: 10px 0px 15px 0px;
+    display: block;
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    border-color: $color-primary;
+    &--name {
+      height: 20px;
+      width: 288px;
+    }
+  }
+  &__reset {
+    margin: 10px 0px 15px 35px;
+    border-radius: 5px;
+    border-color: $color-primary;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+  }
+}

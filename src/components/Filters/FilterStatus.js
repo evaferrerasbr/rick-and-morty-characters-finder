@@ -13,21 +13,22 @@ function FilterStatus(props) {
     <>
       <label htmlFor="gender">Status:</label>
       <select
+        className="Filters__input Filters__input--status"
         name="status"
         id="status"
         onChange={handleChange}
         value={props.filterStatus}
       >
-        <option name="status" value="all">
+        <option className="Filters__input" name="status" value="all">
           All
         </option>
-        <option name="status" value="alive">
+        <option className="Filters__input" name="status" value="alive">
           Alive
         </option>
-        <option name="status" value="dead">
+        <option className="Filters__input" name="status" value="dead">
           Dead
         </option>
-        <option name="status" value="unknown">
+        <option className="Filters__input" name="status" value="unknown">
           Unknown
         </option>
       </select>

@@ -7,6 +7,7 @@ import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Loading from './extras/Loading';
 import ServerError from './extras/ServerError';
+import PageNotFound from './extras/PageNotFound';
 import MissingCharacter from './extras/MissingCharacter';
 import Footer from './Footer';
 import '../stylesheets/components/App.scss';
@@ -145,6 +146,7 @@ function App() {
           />
         </Route>
         <Route path="/character/:id" component={renderDetail} />
+        <Route path="/" component={PageNotFound} />
       </Switch>
       {renderServerError()}
       {renderLoading()}

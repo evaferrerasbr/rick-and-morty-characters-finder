@@ -3,7 +3,11 @@ function Reset(props) {
     props.handleReset();
   };
 
-  return <button onClick={handleChange}>Reset</button>;
+  return (
+    <button className="Filters__reset" onClick={handleChange}>
+      Reset
+    </button>
+  );
 }
 
 export default Reset;
