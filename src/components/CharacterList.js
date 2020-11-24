@@ -25,6 +25,7 @@ function CharacterList(props) {
           handleFilters={props.handleFilters}
           inputValue={props.inputValue}
           genderValue={props.genderValue}
+          statusValue={props.statusValue}
           isOrdered={props.isOrdered}
         />
         <ul>{getCharacterList}</ul>

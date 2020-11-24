@@ -15,6 +15,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(dataLocal.name);
   const [filterGender, setFilterGender] = useState(dataLocal.gender);
+  const [filterStatus, setFilterStatus] = useState(dataLocal.status);
   const [isOrdered, setIsOrdered] = useState(dataLocal.order);
 
   //api
@@ -37,6 +38,7 @@ function App() {
     const filters = {
       name: filterName,
       gender: filterGender.toLowerCase(),
+      status: filterStatus.toLowerCase(),
       order: isOrdered,
     };
     localStorage.setItem('filters', JSON.stringify(filters));
@@ -49,6 +51,9 @@ function App() {
     }
     if (data.name === 'gender') {
       setFilterGender(data.value);
+    }
+    if (data.name === 'status') {
+      setFilterStatus(data.value);
     }
     if (data.name === 'order') {
       setIsOrdered(data.checked);
@@ -65,6 +70,12 @@ function App() {
         return (
           filterGender === 'all' ||
           character.gender.toLowerCase() === filterGender
+        );
+      })
+      .filter((character) => {
+        return (
+          filterStatus === 'all' ||
+          character.status.toLowerCase() === filterStatus
         );
       });
     if (isOrdered) {
@@ -118,6 +129,7 @@ function App() {
             handleFilters={handleFilters}
             inputValue={filterName}
             genderValue={filterGender}
+            statusValue={filterStatus}
             isOrdered={isOrdered}
           />
         </Route>
