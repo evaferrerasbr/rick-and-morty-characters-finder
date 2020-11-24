@@ -14,6 +14,7 @@ function App() {
   const [serverError, setServerError] = useState(false);
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(dataLocal.name);
+  const [filterGender, setFilterGender] = useState(dataLocal.gender);
   const [isOrdered, setIsOrdered] = useState(dataLocal.order);
 
   //api
@@ -35,6 +36,7 @@ function App() {
   const setLocalStorage = () => {
     const filters = {
       name: filterName,
+      gender: filterGender.toLowerCase(),
       order: isOrdered,
     };
     localStorage.setItem('filters', JSON.stringify(filters));
@@ -45,6 +47,9 @@ function App() {
     if (data.name === 'name') {
       setFilterName(data.value);
     }
+    if (data.name === 'gender') {
+      setFilterGender(data.value);
+    }
     if (data.name === 'order') {
       setIsOrdered(data.checked);
     }
@@ -52,9 +57,16 @@ function App() {
 
   //filters
   const filterCharacthers = () => {
-    const filteredCharacters = characters.filter((character) => {
-      return character.name.toLowerCase().includes(filterName.toLowerCase());
-    });
+    const filteredCharacters = characters
+      .filter((character) => {
+        return character.name.toLowerCase().includes(filterName.toLowerCase());
+      })
+      .filter((character) => {
+        return (
+          filterGender === 'all' ||
+          character.gender.toLowerCase() === filterGender
+        );
+      });
     if (isOrdered) {
       filteredCharacters.sort((a, b) => {
         if (a.name > b.name) {
@@ -105,6 +117,7 @@ function App() {
             data={filterCharacthers()}
             handleFilters={handleFilters}
             inputValue={filterName}
+            genderValue={filterGender}
             isOrdered={isOrdered}
           />
         </Route>

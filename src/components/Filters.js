@@ -13,7 +13,10 @@ function Filters(props) {
         handleFilters={props.handleFilters}
         inputValue={props.inputValue}
       />
-      <FilterGender handleFilters={props.handleFilters} />
+      <FilterGender
+        handleFilters={props.handleFilters}
+        genderValue={props.genderValue}
+      />
       <FilterAlphabet
         handleFilters={props.handleFilters}
         isOrdered={props.isOrdered}
