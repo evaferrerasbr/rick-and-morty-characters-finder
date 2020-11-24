@@ -1,9 +1,5 @@
 import { getDataFromApi } from '../services/api';
-import {
-  setLocalStorage,
-  getFromLocalStorage,
-  removeLocalStorage,
-} from '../services/localstorage';
+import { setLocalStorage, getFromLocalStorage } from '../services/localstorage';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
@@ -18,10 +14,10 @@ function App() {
   //state
   const [serverError, setServerError] = useState(false);
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState(dataLocal.name || '');
-  const [filterGender, setFilterGender] = useState(dataLocal.gender || 'all');
-  const [filterStatus, setFilterStatus] = useState(dataLocal.status || 'all');
-  const [isOrdered, setIsOrdered] = useState(dataLocal.order || false);
+  const [filterName, setFilterName] = useState(dataLocal.name);
+  const [filterGender, setFilterGender] = useState(dataLocal.gender);
+  const [filterStatus, setFilterStatus] = useState(dataLocal.status);
+  const [isOrdered, setIsOrdered] = useState(dataLocal.order);
 
   //api
   useEffect(() => {
@@ -60,7 +56,6 @@ function App() {
     setFilterGender('all');
     setFilterStatus('all');
     setIsOrdered(false);
-    removeLocalStorage();
   };
 
   //filters

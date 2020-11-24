@@ -1,6 +1,13 @@
 const getFromLocalStorage = () => {
   const dataLocal = JSON.parse(localStorage.getItem('filters'));
-  return dataLocal !== null ? dataLocal : {};
+  return dataLocal !== null
+    ? dataLocal
+    : {
+        name: '',
+        gender: 'all',
+        status: 'all',
+        order: false,
+      };
 };
 
 const setLocalStorage = (filterName, filterGender, filterStatus, isOrdered) => {
@@ -13,8 +20,4 @@ const setLocalStorage = (filterName, filterGender, filterStatus, isOrdered) => {
   localStorage.setItem('filters', JSON.stringify(filters));
 };
 
-const removeLocalStorage = () => {
-  localStorage.removeItem('filters');
-};
-
-export { setLocalStorage, getFromLocalStorage, removeLocalStorage };
+export { setLocalStorage, getFromLocalStorage };
