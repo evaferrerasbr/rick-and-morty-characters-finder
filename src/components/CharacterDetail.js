@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
+import icon from '../images/dead-icon.png';
 
 function CharacterDetail(props) {
+  const renderIcon = () => {
+    return status === 'Dead' ? (
+      <img src={icon} alt="This character is no longer alive" />
+    ) : null;
+  };
+
   const { image, name, species, status, origin, episodes } = props;
   return (
     <article>
@@ -13,6 +20,7 @@ function CharacterDetail(props) {
         <li>Origin: {origin}</li>
         <li>Episodes: {episodes}</li>
       </ul>
+      {renderIcon()}
     </article>
   );
 }
