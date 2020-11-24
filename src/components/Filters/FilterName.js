@@ -14,7 +14,7 @@ function FilterName(props) {
         id="filterName"
         name="name"
         onChange={handleChange}
-        value={props.inputValue}
+        value={props.filterName}
       />
     </>
   );

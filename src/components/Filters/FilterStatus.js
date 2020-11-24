@@ -14,7 +14,7 @@ function FilterStatus(props) {
         name="status"
         id="status"
         onChange={handleChange}
-        value={props.statusValue}
+        value={props.filterStatus}
       >
         <option name="status" value="all">
           All

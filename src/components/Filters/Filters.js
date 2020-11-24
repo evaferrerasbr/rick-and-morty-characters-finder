@@ -2,7 +2,7 @@ import FilterName from './FilterName';
 import FilterGender from './FilterGender';
 import FilterStatus from './FilterStatus';
 import FilterAlphabet from './FilterAlphabet';
-import Reset from './Reset';
+import Reset from '../Extras/Reset';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -13,19 +13,19 @@ function Filters(props) {
     <form onSubmit={handleSubmit}>
       <FilterName
         handleFilters={props.handleFilters}
-        inputValue={props.inputValue}
+        filterName={props.filterName}
       />
       <FilterGender
         handleFilters={props.handleFilters}
-        genderValue={props.genderValue}
+        filterGender={props.filterGender}
       />
       <FilterStatus
         handleFilters={props.handleFilters}
-        statusValue={props.statusValue}
+        filterStatus={props.filterStatus}
       />
       <FilterAlphabet
         handleFilters={props.handleFilters}
-        isOrdered={props.isOrdered}
+        isOrderedByName={props.isOrderedByName}
       />
       <Reset handleReset={props.handleReset} />
     </form>

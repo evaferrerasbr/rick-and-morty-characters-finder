@@ -1,6 +1,6 @@
-import Filters from './Filters';
+import Filters from './Filters/Filters';
 import CharacterCard from './CharacterCard';
-import NotFound from './NotFound';
+import NotFound from './Extras/NotFound';
 
 function CharacterList(props) {
   const getCharacterList = props.data.map((character) => {
@@ -24,10 +24,10 @@ function CharacterList(props) {
       <section>
         <Filters
           handleFilters={props.handleFilters}
-          inputValue={props.inputValue}
-          genderValue={props.genderValue}
-          statusValue={props.statusValue}
-          isOrdered={props.isOrdered}
+          filterName={props.filterName}
+          filterGender={props.filterGender}
+          filterStatus={props.filterStatus}
+          isOrderedByName={props.isOrderedByName}
           handleReset={props.handleReset}
         />
         <ul>

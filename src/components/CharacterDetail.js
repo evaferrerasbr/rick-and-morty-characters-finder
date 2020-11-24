@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import icon from '../images/dead-icon.png';
 
 function CharacterDetail(props) {
@@ -24,5 +25,23 @@ function CharacterDetail(props) {
     </article>
   );
 }
+
+CharacterDetail.defaultProps = {
+  image: 'https://rickandmortyapi.com/api/character/avatar/19.jpeg',
+  name: 'Unknown character',
+  species: 'Unknown',
+  status: 'Unknown',
+  origin: 'Unknown',
+  episodes: 'Unknown',
+};
+
+CharacterDetail.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  species: PropTypes.string,
+  status: PropTypes.string,
+  origin: PropTypes.string,
+  episodes: PropTypes.number,
+};
 
 export default CharacterDetail;

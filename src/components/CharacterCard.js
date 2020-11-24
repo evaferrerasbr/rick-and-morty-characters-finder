@@ -25,10 +25,10 @@ function CharacterCard(props) {
 }
 
 CharacterCard.defaultProps = {
-  image: 'https://cdn.hackaday.io/images/original/6625541522281130571.gif',
-  name: 'Personaje desconocido',
-  species: 'Especie desconocida',
-  status: 'Status desconocido',
+  image: 'https://rickandmortyapi.com/api/character/avatar/19.jpeg',
+  name: 'Unknown character',
+  species: 'Unknown',
+  status: 'Unknown',
 };
 
 export default CharacterCard;

@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-import Loading from './Loading';
-import ServerError from './ServerError';
-import MissingCharacter from './MissingCharacter';
+import Loading from './Extras/Loading';
+import ServerError from './Extras/ServerError';
+import MissingCharacter from './Extras/MissingCharacter';
 import '../stylesheets/App.scss';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   const [filterName, setFilterName] = useState(dataLocal.name);
   const [filterGender, setFilterGender] = useState(dataLocal.gender);
   const [filterStatus, setFilterStatus] = useState(dataLocal.status);
-  const [isOrdered, setIsOrdered] = useState(dataLocal.order);
+  const [isOrderedByName, setIsOrderedByName] = useState(dataLocal.order);
 
   //api
   useEffect(() => {
@@ -36,7 +36,7 @@ function App() {
 
   //local storage
   useEffect(() => {
-    setLocalStorage(filterName, filterGender, filterStatus, isOrdered);
+    setLocalStorage(filterName, filterGender, filterStatus, isOrderedByName);
   });
 
   //handlers
@@ -51,7 +51,7 @@ function App() {
       setFilterStatus(data.value);
     }
     if (data.name === 'order') {
-      setIsOrdered(data.checked);
+      setIsOrderedByName(data.checked);
     }
   };
 
@@ -59,7 +59,7 @@ function App() {
     setFilterName('');
     setFilterGender('all');
     setFilterStatus('all');
-    setIsOrdered(false);
+    setIsOrderedByName(false);
   };
 
   //filters
@@ -80,7 +80,7 @@ function App() {
           character.status.toLowerCase() === filterStatus
         );
       });
-    if (isOrdered) {
+    if (isOrderedByName) {
       filteredCharacters.sort((a, b) => {
         if (a.name > b.name) {
           return 1;
@@ -134,11 +134,11 @@ function App() {
             data={filterCharacthers()}
             handleFilters={handleFilters}
             handleReset={handleReset}
-            inputValue={filterName}
-            genderValue={filterGender}
-            statusValue={filterStatus}
+            filterName={filterName}
+            filterGender={filterGender}
+            filterStatus={filterStatus}
             isLoading={isLoading}
-            isOrdered={isOrdered}
+            isOrderedByName={isOrderedByName}
           />
         </Route>
         <Route path="/character/:id" component={renderDetail} />

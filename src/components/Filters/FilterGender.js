@@ -14,7 +14,7 @@ function FilterGender(props) {
         name="gender"
         id="gender"
         onChange={handleChange}
-        value={props.genderValue}
+        value={props.filterGender}
       >
         <option name="gender" value="all">
           All
