@@ -8,4 +8,21 @@
     font-size: 18px;
     margin-bottom: 30px;
   }
+  &__list {
+    list-style: none;
+    &--items {
+      width: 150px;
+      padding: 5px;
+      border: 2px solid $color-secondary;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    &--img {
+      width: 150px;
+      border-radius: 3px;
+    }
+    &--icon {
+      width: 20px;
+    }
+  }
 }
