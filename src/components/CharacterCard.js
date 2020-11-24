@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
+import icon from '../images/dead-icon.png';
 
 function CharacterCard(props) {
+  const renderIcon = () => {
+    return status === 'Dead' ? (
+      <img src={icon} alt="This character is no longer alive" />
+    ) : null;
+  };
+
   const { id, image, name, species, status } = props;
   return (
     <Link to={`/character/${id}`}>
@@ -11,6 +18,7 @@ function CharacterCard(props) {
           <li>Species: {species}</li>
           <li>Status:{status}</li>
         </ul>
+        {renderIcon()}
       </article>
     </Link>
   );

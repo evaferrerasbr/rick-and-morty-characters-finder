@@ -1,5 +1,5 @@
 function MissingCharacter() {
-  return <p>Lo sentimos, no hemos encontrado el personaje que buscas</p>;
+  return <p>Lo sentimos, ese personaje no existe</p>;
 }
 
 export default MissingCharacter;
