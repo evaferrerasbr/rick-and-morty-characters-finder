@@ -1,9 +1,10 @@
 import { getDataFromApi } from '../services/api';
 import { useState, useEffect } from 'react';
-import Filters from './Filters';
+import { Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
-import '../stylesheets/App.scss';
+import CharacterDetail from './CharacterDetail';
 import MissingCharacter from './MissingCharacter';
+import '../stylesheets/App.scss';
 
 function App() {
   //state
@@ -25,17 +26,41 @@ function App() {
     return character.name.toLowerCase().includes(filterName.toLowerCase());
   });
 
+  //render
+  const renderDetail = (props) => {
+    const characterId = props.match.params.id;
+    const foundCharacter = characters.find((character) => {
+      return character.id === parseInt(characterId);
+    });
+    if (foundCharacter) {
+      const { image, name, species, status, origin, episode } = foundCharacter;
+      return (
+        <CharacterDetail
+          image={image}
+          name={name}
+          species={species}
+          status={status}
+          origin={origin.name}
+          episodes={episode.length}
+        />
+      );
+    } else {
+      return <MissingCharacter />;
+    }
+  };
+
   //jsx
   return (
-    <main className="App">
-      <h1>Rick and Morty characters finder</h1>
-      <Filters handleFilterName={handleFilterName} inputValue={filterName} />
-      {filteredCharacters.length === 0 ? (
-        <MissingCharacter />
-      ) : (
-        <CharacterList data={filteredCharacters} />
-      )}
-    </main>
+    <Switch>
+      <Route exact path="/">
+        <CharacterList
+          data={filteredCharacters}
+          handleFilterName={handleFilterName}
+          inputValue={filterName}
+        />
+      </Route>
+      <Route path="/character/:id" component={renderDetail} />
+    </Switch>
   );
 }
 

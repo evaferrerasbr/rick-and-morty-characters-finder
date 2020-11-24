@@ -1,3 +1,4 @@
+import Filters from './Filters';
 import CharacterCard from './CharacterCard';
 
 function CharacterList(props) {
@@ -6,6 +7,7 @@ function CharacterList(props) {
     return (
       <li key={id}>
         <CharacterCard
+          id={id}
           image={image}
           name={name}
           species={species}
@@ -15,7 +17,18 @@ function CharacterList(props) {
     );
   });
 
-  return <ul>{getCharacterList}</ul>;
+  return (
+    <main>
+      <h1>Rick and Morty characters finder</h1>
+      <section>
+        <Filters
+          handleFilterName={props.handleFilterName}
+          inputValue={props.inputValue}
+        />
+        <ul>{getCharacterList}</ul>
+      </section>
+    </main>
+  );
 }
 
 export default CharacterList;

@@ -1,14 +1,18 @@
+import { Link } from 'react-router-dom';
+
 function CharacterCard(props) {
-  const { image, name, species, status } = props;
+  const { id, image, name, species, status } = props;
   return (
-    <article>
-      <img src={image} alt={`${name}, Rick and Mortie character`} />
-      <h3>{name}</h3>
-      <ul>
-        <li>Species: {species}</li>
-        <li>Status:{status}</li>
-      </ul>
-    </article>
+    <Link to={`/character/${id}`}>
+      <article>
+        <img src={image} alt={`${name}, Rick and Mortie character`} />
+        <h3>{name}</h3>
+        <ul>
+          <li>Species: {species}</li>
+          <li>Status:{status}</li>
+        </ul>
+      </article>
+    </Link>
   );
 }
 
