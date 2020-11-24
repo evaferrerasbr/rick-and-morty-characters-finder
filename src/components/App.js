@@ -5,9 +5,9 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-import Loading from './Extras/Loading';
-import ServerError from './Extras/ServerError';
-import MissingCharacter from './Extras/MissingCharacter';
+import Loading from './extras/Loading';
+import ServerError from './extras/ServerError';
+import MissingCharacter from './extras/MissingCharacter';
 import Footer from './Footer';
 import '../stylesheets/components/App.scss';
 
