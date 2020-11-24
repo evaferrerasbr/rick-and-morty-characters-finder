@@ -11,9 +11,10 @@ function App() {
   const dataLocal = JSON.parse(localStorage.getItem('filters'));
 
   //state
+  const [serverError, setServerError] = useState(false);
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(dataLocal.name);
-  const [serverError, setServerError] = useState(false);
+  const [isOrdered, setIsOrdered] = useState(dataLocal.order);
 
   //api
   useEffect(() => {
@@ -34,19 +35,39 @@ function App() {
   const setLocalStorage = () => {
     const filters = {
       name: filterName,
+      order: isOrdered,
     };
     localStorage.setItem('filters', JSON.stringify(filters));
   };
 
   //handlers
-  const handleFilterName = (value) => {
-    setFilterName(value);
+  const handleFilters = (data) => {
+    if (data.name === 'name') {
+      setFilterName(data.value);
+    }
+    if (data.name === 'order') {
+      setIsOrdered(data.checked);
+    }
   };
 
   //filters
-  const filteredCharacters = characters.filter((character) => {
-    return character.name.toLowerCase().includes(filterName.toLowerCase());
-  });
+  const filterCharacthers = () => {
+    const filteredCharacters = characters.filter((character) => {
+      return character.name.toLowerCase().includes(filterName.toLowerCase());
+    });
+    if (isOrdered) {
+      filteredCharacters.sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      });
+    }
+    return filteredCharacters;
+  };
 
   //render
   const renderDetail = (props) => {
@@ -81,9 +102,10 @@ function App() {
       <Switch>
         <Route exact path="/">
           <CharacterList
-            data={filteredCharacters}
-            handleFilterName={handleFilterName}
+            data={filterCharacthers()}
+            handleFilters={handleFilters}
             inputValue={filterName}
+            isOrdered={isOrdered}
           />
         </Route>
         <Route path="/character/:id" component={renderDetail} />

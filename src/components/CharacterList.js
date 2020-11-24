@@ -22,8 +22,9 @@ function CharacterList(props) {
       <h1>Rick and Morty characters finder</h1>
       <section>
         <Filters
-          handleFilterName={props.handleFilterName}
+          handleFilters={props.handleFilters}
           inputValue={props.inputValue}
+          isOrdered={props.isOrdered}
         />
         <ul>{getCharacterList}</ul>
       </section>

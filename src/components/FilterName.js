@@ -1,13 +1,21 @@
 function FilterName(props) {
   const handleChange = (ev) => {
-    const value = ev.currentTarget.value;
-    props.handleFilterName(value);
+    const data = {
+      name: ev.currentTarget.name,
+      value: ev.currentTarget.value,
+    };
+    props.handleFilters(data);
   };
 
   return (
     <>
       <label htmlFor="filterName" />
-      <input id="filterName" onChange={handleChange} value={props.inputValue} />
+      <input
+        id="filterName"
+        name="name"
+        onChange={handleChange}
+        value={props.inputValue}
+      />
     </>
   );
 }

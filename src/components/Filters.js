@@ -1,5 +1,6 @@
 import FilterName from './FilterName';
 import FilterGender from './FilterGender';
+import FilterAlphabet from './FilterAlphabet';
 
 function Filters(props) {
   const handleSubmit = (ev) => {
@@ -9,10 +10,14 @@ function Filters(props) {
   return (
     <form onSubmit={handleSubmit}>
       <FilterName
-        handleFilterName={props.handleFilterName}
+        handleFilters={props.handleFilters}
         inputValue={props.inputValue}
       />
-      <FilterGender />
+      <FilterGender handleFilters={props.handleFilters} />
+      <FilterAlphabet
+        handleFilters={props.handleFilters}
+        isOrdered={props.isOrdered}
+      />
     </form>
   );
 }
