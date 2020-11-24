@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+import ServerError from './ServerError';
 import MissingCharacter from './MissingCharacter';
 import '../stylesheets/App.scss';
 
@@ -12,10 +13,17 @@ function App() {
   //state
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(dataLocal.name);
+  const [serverError, setServerError] = useState(false);
 
   //api
   useEffect(() => {
-    getDataFromApi().then((data) => setCharacters(data));
+    getDataFromApi().then((data) => {
+      if (data) {
+        setCharacters(data);
+      } else {
+        setServerError(true);
+      }
+    });
   }, []);
 
   //local storage
@@ -63,18 +71,25 @@ function App() {
     }
   };
 
+  const renderServerError = () => {
+    return serverError === true ? <ServerError /> : null;
+  };
+
   //jsx
   return (
-    <Switch>
-      <Route exact path="/">
-        <CharacterList
-          data={filteredCharacters}
-          handleFilterName={handleFilterName}
-          inputValue={filterName}
-        />
-      </Route>
-      <Route path="/character/:id" component={renderDetail} />
-    </Switch>
+    <>
+      <Switch>
+        <Route exact path="/">
+          <CharacterList
+            data={filteredCharacters}
+            handleFilterName={handleFilterName}
+            inputValue={filterName}
+          />
+        </Route>
+        <Route path="/character/:id" component={renderDetail} />
+      </Switch>
+      {renderServerError()}
+    </>
   );
 }
 

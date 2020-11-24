@@ -1,5 +1,5 @@
 const getDataFromApi = () => {
-  return fetch('https://rickandmortyapi.com/api/character')
+  return fetch('https://ricandmortyapi.com/api/character')
     .then((response) => {
       if (!response.ok) {
         throw response;
@@ -9,12 +9,7 @@ const getDataFromApi = () => {
     .then((data) => {
       return data.results;
     })
-    .catch((err) => {
-      console.log(err);
-      // return {
-      //   error: 'Se ha producido un error en el servidor',
-      // };
-    });
+    .catch(() => {});
 };
 
 export { getDataFromApi };
