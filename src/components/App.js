@@ -9,7 +9,7 @@ import Loading from './Extras/Loading';
 import ServerError from './Extras/ServerError';
 import MissingCharacter from './Extras/MissingCharacter';
 import Footer from './Footer';
-import '../stylesheets/App.scss';
+import '../stylesheets/components/App.scss';
 
 function App() {
   const dataLocal = getFromLocalStorage();
@@ -21,7 +21,7 @@ function App() {
   const [filterName, setFilterName] = useState(dataLocal.name);
   const [filterGender, setFilterGender] = useState(dataLocal.gender);
   const [filterStatus, setFilterStatus] = useState(dataLocal.status);
-  const [isOrderedByName, setIsOrderedByName] = useState(dataLocal.order);
+  const [isSortedByName, setIsSortedByName] = useState(dataLocal.order);
 
   //api
   useEffect(() => {
@@ -38,7 +38,7 @@ function App() {
 
   //local storage
   useEffect(() => {
-    setLocalStorage(filterName, filterGender, filterStatus, isOrderedByName);
+    setLocalStorage(filterName, filterGender, filterStatus, isSortedByName);
   });
 
   //handlers
@@ -53,7 +53,7 @@ function App() {
       setFilterStatus(data.value);
     }
     if (data.name === 'order') {
-      setIsOrderedByName(data.checked);
+      setIsSortedByName(data.checked);
     }
   };
 
@@ -61,7 +61,7 @@ function App() {
     setFilterName('');
     setFilterGender('all');
     setFilterStatus('all');
-    setIsOrderedByName(false);
+    setIsSortedByName(false);
   };
 
   //filters
@@ -82,7 +82,7 @@ function App() {
           character.status.toLowerCase() === filterStatus
         );
       });
-    if (isOrderedByName) {
+    if (isSortedByName) {
       filteredCharacters.sort((a, b) => {
         if (a.name > b.name) {
           return 1;
@@ -141,7 +141,7 @@ function App() {
             filterGender={filterGender}
             filterStatus={filterStatus}
             isLoading={isLoading}
-            isOrderedByName={isOrderedByName}
+            isSortedByName={isSortedByName}
           />
         </Route>
         <Route path="/character/:id" component={renderDetail} />

@@ -1,11 +1,17 @@
 function Footer() {
   return (
-    <p>
-      Developed by{' '}
-      <a href="https://www.github.com/evaferrerasbr" target="blank">
-        Eva Ferreras
-      </a>
-    </p>
+    <footer className="Footer">
+      <p className="Footer__text">
+        Developed by{' '}
+        <a
+          className="link"
+          href="https://www.github.com/evaferrerasbr"
+          target="blank"
+        >
+          Eva Ferreras
+        </a>
+      </p>
+    </footer>
   );
 }
 

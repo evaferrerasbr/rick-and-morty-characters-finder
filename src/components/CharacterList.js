@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import Filters from './Filters/Filters';
 import CharacterCard from './CharacterCard';
 import NotFound from './Extras/NotFound';
+import '../stylesheets/components/CharacterList.scss';
 
 function CharacterList(props) {
   const getCharacterList = props.data.map((character) => {
     const { id, image, name, status, species } = character;
     return (
-      <li key={id}>
+      <li className="CharacterList__list--items" key={id}>
         <CharacterCard
           id={id}
           image={image}
@@ -20,18 +21,18 @@ function CharacterList(props) {
   });
 
   return (
-    <main>
-      <h1>Rick and Morty characters finder</h1>
-      <section>
+    <main className="CharacterList">
+      <h1 className="CharacterList__title">Rick and Morty characters finder</h1>
+      <section className="CharacterList__section">
         <Filters
           handleFilters={props.handleFilters}
           handleReset={props.handleReset}
           filterName={props.filterName}
           filterGender={props.filterGender}
           filterStatus={props.filterStatus}
-          isOrderedByName={props.isOrderedByName}
+          isSortedByName={props.isSortedByName}
         />
-        <ul>
+        <ul className="CharacterList__list">
           {!getCharacterList.length && !props.isLoading ? (
             <NotFound />
           ) : (
@@ -51,7 +52,7 @@ CharacterList.propTypes = {
   filterGender: PropTypes.string.isRequired,
   filterStatus: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  isOrderedByName: PropTypes.bool.isRequired,
+  isSortedByName: PropTypes.bool.isRequired,
 };
 
 export default CharacterList;

@@ -18,7 +18,7 @@ function FilterAlphabet(props) {
           value="order"
           name="order"
           onChange={handleChange}
-          checked={props.isOrderedByName ? true : false}
+          checked={props.isSortedByName ? true : false}
         />
         Order alphabetically
       </label>
@@ -28,7 +28,7 @@ function FilterAlphabet(props) {
 
 FilterAlphabet.propTypes = {
   handleFilters: PropTypes.func.isRequired,
-  isOrderedByName: PropTypes.bool.isRequired,
+  isSortedByName: PropTypes.bool.isRequired,
 };
 
 export default FilterAlphabet;

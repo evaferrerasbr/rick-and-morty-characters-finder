@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import FilterName from './FilterName';
 import FilterGender from './FilterGender';
 import FilterStatus from './FilterStatus';
-import FilterAlphabet from './FilterAlphabet';
+import FilterAlphabet from './FilterSort';
 import Reset from '../Extras/Reset';
 
 function Filters(props) {
@@ -26,7 +26,7 @@ function Filters(props) {
       />
       <FilterAlphabet
         handleFilters={props.handleFilters}
-        isOrderedByName={props.isOrderedByName}
+        isSortedByName={props.isSortedByName}
       />
       <Reset handleReset={props.handleReset} />
     </form>
@@ -39,7 +39,7 @@ Filters.propTypes = {
   filterName: PropTypes.string.isRequired,
   filterGender: PropTypes.string.isRequired,
   filterStatus: PropTypes.string.isRequired,
-  isOrderedByName: PropTypes.bool.isRequired,
+  isSortedByName: PropTypes.bool.isRequired,
 };
 
 export default Filters;
