@@ -1,5 +1,6 @@
 import Filters from './Filters';
 import CharacterCard from './CharacterCard';
+import NotFound from './NotFound';
 
 function CharacterList(props) {
   const getCharacterList = props.data.map((character) => {
@@ -29,7 +30,13 @@ function CharacterList(props) {
           isOrdered={props.isOrdered}
           handleReset={props.handleReset}
         />
-        <ul>{getCharacterList}</ul>
+        <ul>
+          {!getCharacterList.length && !props.isLoading ? (
+            <NotFound />
+          ) : (
+            getCharacterList
+          )}
+        </ul>
       </section>
     </main>
   );

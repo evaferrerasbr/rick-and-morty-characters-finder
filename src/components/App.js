@@ -137,6 +137,7 @@ function App() {
             inputValue={filterName}
             genderValue={filterGender}
             statusValue={filterStatus}
+            isLoading={isLoading}
             isOrdered={isOrdered}
           />
         </Route>
