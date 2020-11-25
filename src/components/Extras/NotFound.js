@@ -1,8 +1,18 @@
+import '../../stylesheets/extras/NotFound.scss';
+import notfound from '../../images/not-found-character.png';
+
 function NotFound() {
   return (
-    <>
-      <p>No hay ningún personaje con esas características</p>
-    </>
+    <article className="NotFound">
+      <img
+        className="NotFound__img"
+        src={notfound}
+        alt="No results for your search"
+      />
+      <p className="NotFound__text">
+        Holly shit, the character you want doesn't exist
+      </p>
+    </article>
   );
 }
 

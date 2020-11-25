@@ -13,7 +13,6 @@ function FilterAlphabet(props) {
     <>
       <label htmlFor="order">
         <input
-          className="Filters__input--sort"
           id="order"
           type="checkbox"
           value="order"

@@ -37,7 +37,7 @@ function CharacterDetail(props) {
       </ul>
       {renderIcon()}
       <Link className="CharacterDetail__link" to="/">
-        Volver al listado de personajes
+        Go back to all characters
       </Link>
     </article>
   );

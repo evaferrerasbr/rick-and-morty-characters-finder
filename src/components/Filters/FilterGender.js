@@ -13,22 +13,22 @@ function FilterGender(props) {
     <>
       <label htmlFor="gender">Gender:</label>
       <select
-        className="Filters__input Filters__input--gender"
+        className="Filters__input"
         name="gender"
         id="gender"
         onChange={handleChange}
         value={props.filterGender}
       >
-        <option className="Filters__options" name="gender" value="all">
+        <option name="gender" value="all">
           All
         </option>
-        <option className="Filters__options" name="gender" value="female">
+        <option name="gender" value="female">
           Female
         </option>
-        <option className="Filters__options" name="gender" value="male">
+        <option name="gender" value="male">
           Male
         </option>
-        <option className="Filters__options" name="gender" value="unknown">
+        <option name="gender" value="unknown">
           Unknown
         </option>
       </select>

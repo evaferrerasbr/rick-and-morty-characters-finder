@@ -1,0 +1,11 @@
+.NotFound {
+  width: 300px;
+  margin: 10px 20px 0px 20px;
+  &__img {
+    width: 150px;
+    margin: 0px 0px 15px 50px;
+  }
+  &__text {
+    line-height: 1.5;
+  }
+}

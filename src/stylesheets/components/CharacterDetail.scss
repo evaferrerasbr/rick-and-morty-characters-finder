@@ -29,12 +29,12 @@
     grid-column-end: 2;
     padding-left: 15px;
     list-style: none;
+    line-height: 1.7;
     &--species,
     &--status,
     &--origin,
     &--episodes {
       font-size: 12px;
-      margin-bottom: 5px;
     }
     &--icon {
       width: 25px;
