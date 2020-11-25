@@ -10,7 +10,6 @@ import ServerError from './extras/ServerError';
 import PageNotFound from './extras/PageNotFound';
 import MissingCharacter from './extras/MissingCharacter';
 import Footer from './Footer';
-import '../stylesheets/components/App.scss';
 
 function App() {
   const dataLocal = getFromLocalStorage();
@@ -129,7 +128,7 @@ function App() {
 
   //jsx
   return (
-    <div className="App">
+    <>
       <Header />
       <Switch>
         <Route exact path="/">
@@ -150,7 +149,7 @@ function App() {
       {renderServerError()}
       {renderLoading()}
       <Footer />
-    </div>
+    </>
   );
 }
 
