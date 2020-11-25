@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../stylesheets/extras/MissingCharacter.scss';
-import missingcharacter from '../../images/missing-character.png';
+import missingCharacter from '../../images/missing-character.png';
 
 function MissingCharacter() {
   return (
@@ -8,7 +8,7 @@ function MissingCharacter() {
       <div className="MissingCharacter__wrapper">
         <img
           className="MissingCharacter__img"
-          src={missingcharacter}
+          src={missingCharacter}
           alt="No results for your search"
         />
         <p className="MissingCharacter__text">

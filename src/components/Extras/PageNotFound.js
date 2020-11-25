@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import '../../stylesheets/extras/PageNotFound.scss';
-import pagenotfound from '../../images/page-not-found.png';
+import pageNotFound from '../../images/page-not-found.png';
 
 function PageNotFound() {
   return (
     <article className="PageNotFound">
       <img
         className="PageNotFound__img"
-        src={pagenotfound}
+        src={pageNotFound}
         alt="No results for your search"
       />
       <p className="PageNotFound__text">

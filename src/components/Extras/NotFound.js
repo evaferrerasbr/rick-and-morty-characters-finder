@@ -1,12 +1,12 @@
 import '../../stylesheets/extras/NotFound.scss';
-import notfound from '../../images/not-found-character.png';
+import notFound from '../../images/not-found-character.png';
 
 function NotFound() {
   return (
     <article className="NotFound">
       <img
         className="NotFound__img"
-        src={notfound}
+        src={notFound}
         alt="No results for your search"
       />
       <p className="NotFound__text">

@@ -1,0 +1,11 @@
+.ServerError {
+  margin: 0px 25px 15px 40px;
+  &__img {
+    width: 250px;
+    margin-bottom: 15px;
+  }
+  &__text {
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+}

@@ -1,6 +1,12 @@
+import '../../stylesheets/extras/ServerError.scss';
+import serverError from '../../images/server-error.png';
+
 function ServerError() {
   return (
-    <p>Se ha producido un error en el servidor, inténtalo de nuevo más tarde</p>
+    <article className="ServerError">
+      <img className="ServerError__img" src={serverError} alt="Server error" />
+      <p>The server doesn't feel like working...</p>
+    </article>
   );
 }
 
