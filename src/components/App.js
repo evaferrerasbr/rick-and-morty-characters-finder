@@ -5,13 +5,14 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-import Loading from './extras/Loading';
-import ServerError from './extras/ServerError';
-import PageNotFound from './extras/PageNotFound';
-import MissingCharacter from './extras/MissingCharacter';
+import Loading from './Extras/Loading';
+import ServerError from './Extras/ServerError';
+import PageNotFound from './Extras/PageNotFound';
+import MissingCharacter from './Extras/MissingCharacter';
 import Footer from './Footer';
 
 function App() {
+  //get the info from the service local-storage and saves an object with all the info in a const to use it in the state
   const dataLocal = getFromLocalStorage();
 
   //state
@@ -23,7 +24,8 @@ function App() {
   const [filterStatus, setFilterStatus] = useState(dataLocal.status);
   const [isSortedByName, setIsSortedByName] = useState(dataLocal.order);
 
-  //api
+  //API
+  //this function check the server response and shows a component named ServerError if there has been an error. If it's not, it saves the info in the state
   useEffect(() => {
     getDataFromApi().then((data) => {
       if (data) {
@@ -35,12 +37,14 @@ function App() {
     });
   }, []);
 
-  //local storage
+  //LOCAL STORAGE
+  //we send the info of the filters to the function that is placed in the services folder
   useEffect(() => {
     setLocalStorage(filterName, filterGender, filterStatus, isSortedByName);
   });
 
-  //handlers
+  //HANDLERS
+  //all filters send info to this function, which save the info in the correct state
   const handleFilters = (data) => {
     if (data.name === 'name') {
       setFilterName(data.value);
@@ -56,6 +60,7 @@ function App() {
     }
   };
 
+  //reset the users search
   const handleReset = () => {
     setFilterName('');
     setFilterGender('all');
@@ -63,7 +68,8 @@ function App() {
     setIsSortedByName(false);
   };
 
-  //filters
+  //FILTERS
+  //creates an array with the elements that matches the user search and sort elements by name if the user has selected that option
   const filterCharacthers = () => {
     const filteredCharacters = characters
       .filter((character) => {
@@ -95,7 +101,8 @@ function App() {
     return filteredCharacters;
   };
 
-  //render
+  //RENDER
+  //render the details of the character with an id that matches the id of the selected route
   const renderDetail = (props) => {
     const characterId = props.match.params.id;
     const foundCharacter = characters.find((character) => {
@@ -118,10 +125,12 @@ function App() {
     }
   };
 
+  //when there is any error in the server
   const renderServerError = () => {
     return serverError === true ? <ServerError /> : null;
   };
 
+  //while fetch
   const renderLoading = () => {
     return isLoading === true ? <Loading /> : null;
   };

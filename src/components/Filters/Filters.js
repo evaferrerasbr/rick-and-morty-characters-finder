@@ -3,7 +3,7 @@ import FilterName from './FilterName';
 import FilterGender from './FilterGender';
 import FilterStatus from './FilterStatus';
 import FilterAlphabet from './FilterSort';
-import Reset from '../extras/Reset';
+import Reset from '../Extras/Reset';
 import '../../stylesheets/components/Filters.scss';
 
 function Filters(props) {

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import Filters from './filters/Filters';
+import Filters from './Filters/Filters';
 import CharacterCard from './CharacterCard';
-import NotFound from './extras/NotFound';
+import NotFound from './Extras/NotFound';
 import '../stylesheets/components/CharacterList.scss';
 
 function CharacterList(props) {
