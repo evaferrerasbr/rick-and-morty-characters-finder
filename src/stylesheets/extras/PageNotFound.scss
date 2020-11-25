@@ -1,8 +1,17 @@
+@import '../core/mixins.scss';
+
 .PageNotFound {
   margin: 0px 25px 15px 30px;
+  @include tablet {
+    margin-left: 60px;
+  }
   &__img {
     width: 300px;
     margin-bottom: 15px;
+    @include tablet {
+      width: 400px;
+      margin-bottom: 25px;
+    }
   }
   &__text {
     line-height: 1.5;

@@ -32,13 +32,11 @@ function CharacterList(props) {
           filterStatus={props.filterStatus}
           isSortedByName={props.isSortedByName}
         />
-        <ul className="CharacterList__list">
-          {!getCharacterList.length && !props.isLoading ? (
-            <NotFound />
-          ) : (
-            getCharacterList
-          )}
-        </ul>
+        {!getCharacterList.length && !props.isLoading ? (
+          <NotFound />
+        ) : (
+          <ul className="CharacterList__list">{getCharacterList}</ul>
+        )}
       </section>
     </main>
   );

@@ -1,17 +1,32 @@
+@import '../core/mixins.scss';
+
 .MissingCharacter {
   &__wrapper {
     display: flex;
     margin: 0px 30px 15px 50px;
+    @include tablet {
+      margin: 10px 30px 15px 100px;
+    }
   }
   &__img {
     width: 70px;
     margin-right: 30px;
+    @include tablet {
+      width: 120px;
+      margin-right: 60px;
+    }
   }
   &__text {
     margin-top: 25px;
     line-height: 1.5;
+    @include tablet {
+      margin-top: 70px;
+    }
   }
   &__link {
     margin-left: 50px;
+    @include tablet {
+      margin-left: 100px;
+    }
   }
 }

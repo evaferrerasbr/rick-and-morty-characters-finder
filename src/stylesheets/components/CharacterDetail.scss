@@ -1,22 +1,32 @@
 @import '../core/variables.scss';
+@import '../core/mixins.scss';
 
 .CharacterDetail {
   &__article {
-    width: 270px;
+    width: 300px;
     padding: 20px;
-    margin: 0px 30px;
+    margin: 0px 35px;
     border: 1px solid $color-secondary;
     border-radius: 10px;
     display: grid;
-    grid-template-columns: 130px 1fr;
-    grid-template-rows: 140px 1fr 30px;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 160px 1fr 1fr;
+    @include tablet {
+      width: 400px;
+      margin: 0px 200px;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 210px 1fr 1fr;
+    }
   }
   &__img {
     grid-column-start: 1;
     grid-column-end: 1;
-    width: 125px;
+    width: 145px;
     border-radius: 5px;
     margin-bottom: 10px;
+    @include tablet {
+      width: 190px;
+    }
   }
   &__title {
     grid-row-start: 2;
@@ -35,12 +45,18 @@
     &--episodes {
       font-size: 12px;
       margin-bottom: 5px;
+      line-height: 1.5;
     }
     &--icon {
       width: 25px;
       position: absolute;
-      left: 190px;
-      top: 265px;
+      left: 215px;
+      top: 285px;
+      @include tablet {
+        width: 40px;
+        left: 430px;
+        top: 315px;
+      }
     }
   }
   &__link {

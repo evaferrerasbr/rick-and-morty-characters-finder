@@ -1,4 +1,5 @@
 @import '../core/variables.scss';
+@import '../core/mixins.scss';
 
 .Filters {
   margin: 15px;
@@ -10,9 +11,15 @@
     height: 35px;
     border-radius: 5px;
     border-color: $color-primary;
+    @include tablet {
+      width: 600px;
+    }
     &--name {
       height: 20px;
       width: 288px;
+      @include tablet {
+        width: 588px;
+      }
     }
   }
   &__reset {
