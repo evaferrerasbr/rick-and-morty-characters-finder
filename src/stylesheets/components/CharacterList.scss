@@ -15,26 +15,28 @@
     position: relative;
   }
   &__list {
+    margin: 0px 15px;
     list-style: none;
     display: grid;
+    padding-left: 0px;
     grid-template-columns: 150px 150px;
-    column-gap: 30px;
+    column-gap: 5px;
     row-gap: 20px;
     &--items {
-      width: 150px;
+      width: 130px;
       padding: 5px;
       border: 1px solid $color-secondary;
       border-radius: 5px;
       display: inline-block;
     }
     &--img {
-      width: 150px;
+      width: 129px;
       border-radius: 3px;
     }
     &--icon {
       width: 25px;
       position: absolute;
-      bottom: 200px;
+      bottom: 175px;
     }
     &--name {
       margin: 10px 0px 5px 5px;

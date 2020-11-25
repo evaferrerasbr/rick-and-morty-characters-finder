@@ -17,7 +17,7 @@ function App() {
 
   //state
   const [serverError, setServerError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(dataLocal.name);
   const [filterGender, setFilterGender] = useState(dataLocal.gender);
@@ -26,7 +26,6 @@ function App() {
 
   //api
   useEffect(() => {
-    setIsLoading(true);
     getDataFromApi().then((data) => {
       if (data) {
         setCharacters(data);
@@ -130,7 +129,7 @@ function App() {
 
   //jsx
   return (
-    <>
+    <div className="App">
       <Header />
       <Switch>
         <Route exact path="/">
@@ -151,7 +150,7 @@ function App() {
       {renderServerError()}
       {renderLoading()}
       <Footer />
-    </>
+    </div>
   );
 }
 
