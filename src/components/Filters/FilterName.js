@@ -11,7 +11,7 @@ function FilterName(props) {
 
   return (
     <>
-      <label htmlFor="filterName">Name:</label>
+      <label htmlFor="filterName">Name</label>
       <input
         className="Filters__input Filters__input--name"
         id="filterName"

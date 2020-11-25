@@ -2,9 +2,12 @@
 @import '../core/mixins.scss';
 
 .Footer {
+  position: fixed;
+  bottom: 0;
   height: 60px;
   width: 100%;
   background-color: $color-secondary;
+  opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;

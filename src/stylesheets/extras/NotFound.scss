@@ -2,7 +2,11 @@
 
 .NotFound {
   width: 300px;
-  margin-left: 30px;
+  margin: 0px 0px 100px 30px;
+  @include desktop {
+    width: 600px;
+    margin-left: 100px;
+  }
   &__img {
     width: 160px;
     margin: 0px 0px 15px 40px;

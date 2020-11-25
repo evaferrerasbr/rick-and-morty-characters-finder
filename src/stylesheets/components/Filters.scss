@@ -3,6 +3,9 @@
 
 .Filters {
   margin: 15px;
+  @include desktop {
+    margin-left: 100px;
+  }
   &__input {
     padding: 5px;
     margin: 10px 0px 15px 0px;
@@ -14,11 +17,19 @@
     @include tablet {
       width: 600px;
     }
+    @include desktop {
+      width: 150px;
+      margin: 0px 30px 0px 10px;
+      display: inline-block;
+    }
     &--name {
       height: 20px;
       width: 288px;
       @include tablet {
         width: 588px;
+      }
+      @include desktop {
+        width: 140px;
       }
     }
   }

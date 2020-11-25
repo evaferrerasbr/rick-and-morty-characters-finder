@@ -1,7 +1,7 @@
 @import '../core/mixins.scss';
 
 .ServerError {
-  margin: 0px 25px 15px 40px;
+  margin: 0px 25px 100px 40px;
   @include tablet {
     margin-left: 90px;
   }

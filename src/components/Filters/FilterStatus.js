@@ -11,7 +11,7 @@ function FilterStatus(props) {
 
   return (
     <>
-      <label htmlFor="gender">Status:</label>
+      <label htmlFor="gender">Status</label>
       <select
         className="Filters__input"
         name="status"

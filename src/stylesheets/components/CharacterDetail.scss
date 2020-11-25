@@ -17,6 +17,12 @@
       grid-template-columns: 200px 1fr;
       grid-template-rows: 210px 1fr 1fr;
     }
+    @include desktop {
+      width: 600px;
+      margin: 0px 400px;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 210px 1fr 1fr;
+    }
   }
   &__img {
     grid-column-start: 1;
@@ -33,6 +39,9 @@
     grid-row-end: 2;
     font-size: 14px;
     margin-bottom: 10px;
+    @include desktop {
+      font-size: 16px;
+    }
   }
   &__list {
     grid-column-start: 2;
@@ -46,6 +55,9 @@
       font-size: 12px;
       margin-bottom: 5px;
       line-height: 1.5;
+      @include desktop {
+        font-size: 14px;
+      }
     }
     &--icon {
       width: 25px;
@@ -57,11 +69,19 @@
         left: 430px;
         top: 315px;
       }
+      @include desktop {
+        width: 40px;
+        left: 630px;
+        top: 355px;
+      }
     }
   }
   &__link {
     grid-row-start: 3;
     grid-row-end: 3;
     font-size: 12px;
+    @include desktop {
+      font-size: 14px;
+    }
   }
 }

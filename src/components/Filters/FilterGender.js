@@ -11,7 +11,7 @@ function FilterGender(props) {
 
   return (
     <>
-      <label htmlFor="gender">Gender:</label>
+      <label htmlFor="gender">Gender</label>
       <select
         className="Filters__input"
         name="gender"
