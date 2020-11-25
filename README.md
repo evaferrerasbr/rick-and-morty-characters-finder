@@ -14,3 +14,7 @@ https://beta.adalab.es/modulo-3-evaluacion-final-evaferrerasbr/#/
 ## Descarga e instalación
 
 Para usar este proyecto en tu equipo local solo tienes que clonarlo y hacer npm install y npm start.
+
+## Previsualización
+
+https://github.com/Adalab/modulo-3-evaluacion-final-evaferrerasbr/blob/master/src/images/readme1.JPG
