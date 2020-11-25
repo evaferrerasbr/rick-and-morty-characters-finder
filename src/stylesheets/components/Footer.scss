@@ -1,0 +1,17 @@
+@import '../core/variables.scss';
+
+.Footer {
+  height: 10vh;
+  width: 100%;
+  background-color: $color-secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  &__text,
+  &__link {
+    background-color: $color-secondary;
+    color: $color-black;
+    font-weight: 600;
+  }
+}

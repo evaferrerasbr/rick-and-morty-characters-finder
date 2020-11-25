@@ -1,7 +1,8 @@
 @import './core/variables';
 
 * {
-  background-color: $background-color;
+  margin: 0;
+  background-color: $color-black;
   color: $color-light;
   font-size: $font-size;
   font-family: $font-main;

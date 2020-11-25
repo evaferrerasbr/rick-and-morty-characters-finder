@@ -10,6 +10,10 @@
   }
   &__list {
     list-style: none;
+    display: grid;
+    grid-template-columns: 150px 150px;
+    column-gap: 30px;
+    row-gap: 20px;
     &--items {
       width: 150px;
       padding: 5px;
@@ -23,6 +27,9 @@
     }
     &--icon {
       width: 20px;
+    }
+    &--name {
+      font-size: 14px;
     }
   }
 }
