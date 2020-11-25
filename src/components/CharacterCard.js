@@ -15,17 +15,17 @@ function CharacterCard(props) {
 
   const { id, image, name, species, status } = props;
   return (
-    <Link to={`/character/${id}`}>
-      <article>
+    <Link className="CharacterList__link" to={`/character/${id}`}>
+      <article className="CharacterList__article">
         <img
           className="CharacterList__list--img"
           src={image}
           alt={`${name}, Rick and Mortie character`}
         />
         <h3 className="CharacterList__list--name">{name}</h3>
-        <ul>
-          <li>Species: {species}</li>
-          <li>Status:{status}</li>
+        <ul className="CharacterList__list--features">
+          <li className="CharacterList__list--species">Species: {species}</li>
+          <li className="CharacterList__list--status">Status:{status}</li>
         </ul>
         {renderIcon()}
       </article>

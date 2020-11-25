@@ -8,6 +8,12 @@
     font-size: 18px;
     margin-bottom: 30px;
   }
+  &__link {
+    text-decoration: none;
+  }
+  &__article {
+    position: relative;
+  }
   &__list {
     list-style: none;
     display: grid;
@@ -26,10 +32,23 @@
       border-radius: 3px;
     }
     &--icon {
-      width: 20px;
+      width: 25px;
+      position: absolute;
+      bottom: 200px;
     }
     &--name {
+      margin: 10px 0px 5px 5px;
       font-size: 14px;
+    }
+    &--features {
+      list-style: none;
+      padding-left: 5px;
+      line-height: 15px;
+    }
+    &--species,
+    &--status {
+      font-size: 12px;
+      margin-bottom: 5px;
     }
   }
 }
