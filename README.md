@@ -17,4 +17,4 @@ Para usar este proyecto en tu equipo local solo tienes que clonarlo y hacer npm 
 
 ## Previsualización
 
-https://github.com/Adalab/modulo-3-evaluacion-final-evaferrerasbr/blob/master/src/images/readme1.JPG
+![Home de la aplicación](https://github.com/Adalab/modulo-3-evaluacion-final-evaferrerasbr/blob/master/src/images/readme1.JPG)
