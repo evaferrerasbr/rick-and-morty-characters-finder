@@ -20,7 +20,7 @@ src
 │ ├── Filters - Formulario con los filtros por nombre, género, status y para ordenar alfabéticamente
 │ ├── Extras - Contiene componentes que añaden mejoras a la experiencia de usuaria
 │ ├── Header.js
-│ └── Footer.s
+│ └── Footer.js
 ├── images
 ├── images-readme
 ├── services
