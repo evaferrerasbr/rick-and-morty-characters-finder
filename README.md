@@ -4,7 +4,7 @@
 
 ## Descripción
 
-El ejercicio de evaluación final consiste en desarrollar en **React** una aplicación que devuelve inicialmente 20 personajes de la [rickandmortyapi](#https://rickandmortyapi.com/documentation/). La aplicación debe permitir filtrar por nombre y acceder a una ficha con los detalles de cada uno mediante el uso de **React router**. De forma adicional se han desarrollado filtros de género y status, así como un filtro para ordenar alfabéticamente a los personajes.
+El ejercicio de evaluación final consiste en desarrollar en **React** una aplicación que devuelve inicialmente 20 personajes de la [rickandmortyapi](https://rickandmortyapi.com/documentation/). La aplicación debe permitir filtrar por nombre y acceder a una ficha con los detalles de cada uno mediante el uso de **React router**. De forma adicional se han desarrollado filtros de género y status, así como un filtro para ordenar alfabéticamente a los personajes.
 
 Además de React, para este desarrollo hemos utilizado **npm** y **SASS**.
 
@@ -13,12 +13,12 @@ Además de React, para este desarrollo hemos utilizado **npm** y **SASS**.
 ```
 src
 ├── components
-│ ├── App.js - Controla el estado de la aplicación, el almacenamiento en local storage y el renderizado de los componentes
-│ ├── CharacterList.js - Contiene un formulario con los filtros y un listado con los personajes que se mostrarán en pantalla
-│ ├── CharacterCard.js - Tarjeta del personaje
+│ ├── App.js - Controla el estado de la aplicación y el renderizado de los componentes
+│ ├── CharacterList.js - Listado con los personajes que se mostrarán en pantalla
+│ ├── CharacterCard.js - Artículo con cada tarjeta de personaje del listado
 │ ├── CharacterDetail.js - Tarjeta con detalles del personaje a la que accedemos mediante React router
-│ ├── Filters - Contiene los filtros por nombre, género, status y para ordenar alfabéticamente
-│ ├── Extras - Contiene componentes que añaden mejoras a la experiencia de usuaria: error del servidor, página no encontrada, reset...
+│ ├── Filters - Formulario con los filtros por nombre, género, status y para ordenar alfabéticamente
+│ ├── Extras - Contiene componentes que añaden mejoras a la experiencia de usuaria
 │ ├── Header.js
 │ └── Footer.s
 ├── images
