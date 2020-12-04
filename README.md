@@ -1,5 +1,7 @@
 ## Evaluación final del módulo 3
 
+![Homepage](https://github.com/evaferrerasbr/modulo-3-evaluacion-final-evaferrerasbr/blob/master/src/images-readme/homepage.JPG)
+
 ## Descripción
 
 El ejercicio de evaluación final consiste en desarrollar en **React** una aplicación que devuelve inicialmente 20 personajes de la [rickandmortyapi](#https://rickandmortyapi.com/documentation/). La aplicación debe permitir filtrar por nombre y acceder a una ficha con los detalles de cada uno mediante el uso de **React router**. De forma adicional se han desarrollado filtros de género y status, así como un filtro para ordenar alfabéticamente a los personajes.
@@ -8,6 +10,7 @@ Además de React, para este desarrollo hemos utilizado **npm** y **SASS**.
 
 ## Estructura
 
+```
 src
 ├── components
 │ ├── App.js - Controla el estado de la aplicación, el almacenamiento en local storage y el renderizado de los componentes
@@ -25,6 +28,7 @@ src
 │ └── localstorage.js - Almacena la búsqueda de la usuaria en el local storage
 ├── stylesheets - Las hojas de estilo siguen la misma estructura que los componentes
 └── index.js
+```
 
 El proyecto tiene las ramas principales máster y dev. Además, hemos utilizado el **sistema de Issues de Github** para organizar el trabajo. Cada una de las ramas del proyecto se corresponde con un issue, que tiene detalladas las tareas realizadas. Se han marcado como "bonus" todas las tareas extra que no eran requerimientos necesarios para la evaluación.
 
