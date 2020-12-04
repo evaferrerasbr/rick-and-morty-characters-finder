@@ -2,10 +2,15 @@
 @import '../core/mixins.scss';
 
 .CharacterDetail {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &__article {
     width: 300px;
     padding: 20px;
-    margin: 0px 35px;
     border: 1px solid $color-secondary;
     border-radius: 10px;
     display: grid;
@@ -13,13 +18,11 @@
     grid-template-rows: 160px 1fr 1fr;
     @include tablet {
       width: 400px;
-      margin: 0px 200px;
       grid-template-columns: 200px 1fr;
       grid-template-rows: 210px 1fr 1fr;
     }
     @include desktop {
       width: 600px;
-      margin: 0px 400px;
       grid-template-columns: 200px 1fr;
       grid-template-rows: 210px 1fr 1fr;
     }
@@ -57,22 +60,6 @@
       line-height: 1.5;
       @include desktop {
         font-size: 14px;
-      }
-    }
-    &--icon {
-      width: 25px;
-      position: absolute;
-      left: 215px;
-      top: 285px;
-      @include tablet {
-        width: 40px;
-        left: 430px;
-        top: 315px;
-      }
-      @include desktop {
-        width: 40px;
-        left: 630px;
-        top: 355px;
       }
     }
   }

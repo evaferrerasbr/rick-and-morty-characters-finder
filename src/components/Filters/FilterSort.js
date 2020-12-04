@@ -11,8 +11,9 @@ function FilterAlphabet(props) {
 
   return (
     <>
-      <label htmlFor="order">
+      <label className="Filters__input--orderLabel" htmlFor="order">
         <input
+          className="Filters__input--order"
           id="order"
           type="checkbox"
           value="order"
@@ -20,7 +21,10 @@ function FilterAlphabet(props) {
           onChange={handleChange}
           checked={props.isSortedByName ? true : false}
         />
-        Order alphabetically
+        <span
+          className={props.isSortedByName ? 'Filters__input--orderChecked' : ''}
+        ></span>
+        Order by name
       </label>
     </>
   );

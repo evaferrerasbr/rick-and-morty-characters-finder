@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import icon from '../images/dead-icon.png';
+import unkwnon from '../images/unknown.jpeg';
 
 function CharacterCard(props) {
   const renderIcon = () => {
@@ -34,7 +35,7 @@ function CharacterCard(props) {
 }
 
 CharacterCard.defaultProps = {
-  image: 'https://rickandmortyapi.com/api/character/avatar/19.jpeg',
+  image: { unkwnon },
   name: 'Unknown character',
   species: 'Unknown',
   status: 'Unknown',

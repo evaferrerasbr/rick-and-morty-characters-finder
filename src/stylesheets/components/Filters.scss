@@ -4,7 +4,7 @@
 .Filters {
   margin: 15px;
   @include desktop {
-    margin-left: 100px;
+    max-width: 1100px;
   }
   &__input {
     padding: 5px;
@@ -31,6 +31,23 @@
       @include desktop {
         width: 140px;
       }
+    }
+    &--order {
+      margin-right: 5px;
+      height: 15px;
+      width: 15px;
+    }
+    &--orderLabel {
+      position: relative;
+    }
+    &--orderChecked {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      background-color: $color-secondary;
+      border-radius: 3px;
     }
   }
   &__reset {
