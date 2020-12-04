@@ -43,4 +43,4 @@ Para usar este proyecto en tu equipo local:
 
 ## Demo
 
-Para ver la aplicación en funcionamiento puedes visitar el [siguiente enlace](#https://beta.adalab.es/modulo-3-evaluacion-final-evaferrerasbr/#/), que también se encuentra disponible en la descripción del proyecto.
+Para ver la aplicación en funcionamiento puedes visitar el [siguiente enlace](https://evaferrerasbr.github.io/modulo-3-evaluacion-final-evaferrerasbr/#/), que también se encuentra disponible en la descripción del proyecto.
