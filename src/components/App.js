@@ -11,10 +11,9 @@ import PageNotFound from './Extras/PageNotFound';
 import MissingCharacter from './Extras/MissingCharacter';
 import Footer from './Footer';
 
-function App() {
-  //get the info from the service local-storage and saves an object with all the info in a const to use it in the state
-  const dataLocal = getFromLocalStorage();
+const dataLocal = getFromLocalStorage();
 
+function App() {
   //state
   const [serverError, setServerError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +24,7 @@ function App() {
   const [isSortedByName, setIsSortedByName] = useState(dataLocal.order);
 
   //API
-  //this function check the server response and shows a component named ServerError if there has been an error. If it's not, it saves the info in the state
+  //checks the server response and shows a component named ServerError if there has been an error. If it's not, it saves the info in the state
   useEffect(() => {
     getDataFromApi().then((data) => {
       if (data) {
@@ -38,13 +37,13 @@ function App() {
   }, []);
 
   //LOCAL STORAGE
-  //we send the info of the filters to the function that is placed in the services folder
+  //we send the filters info as parameters to the service localstorage.js
   useEffect(() => {
     setLocalStorage(filterName, filterGender, filterStatus, isSortedByName);
   });
 
   //HANDLERS
-  //all filters send info to this function, which save the info in the correct state
+  //saves the filters info in the state when an input changes
   const handleFilters = (data) => {
     if (data.name === 'name') {
       setFilterName(data.value);
@@ -60,7 +59,7 @@ function App() {
     }
   };
 
-  //reset the users search
+  //resets the users search
   const handleReset = () => {
     setFilterName('');
     setFilterGender('all');
@@ -69,7 +68,7 @@ function App() {
   };
 
   //FILTERS
-  //creates an array with the elements that matches the user search and sort elements by name if the user has selected that option
+  //creates an array with the elements that matches the users search and sort elements by name if the user has selected that option
   const filterCharacthers = () => {
     const filteredCharacters = characters
       .filter((character) => {
@@ -102,7 +101,7 @@ function App() {
   };
 
   //RENDER
-  //render the details of the character with an id that matches the id of the selected route
+  //renders the details of the character with an id that matches the id of the selected route
   const renderDetail = (props) => {
     const characterId = props.match.params.id;
     const foundCharacter = characters.find((character) => {
